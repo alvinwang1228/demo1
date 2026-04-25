@@ -1,0 +1,181 @@
+╔════════════════════════════════════════════════════════════════╗
+║                                                                ║
+║        ✅ Token.exe - .NET Framework 4.8 版本已完成             ║
+║                                                                ║
+║         终端机工具 | 命令行工具 | 跨平台兼容                    ║
+║                                                                ║
+╚════════════════════════════════════════════════════════════════╝
+
+📦 PROJECT STRUCTURE
+════════════════════════════════════════════════════════════════
+
+✅ SOURCE CODE (2 files)
+   • Program.cs (58 lines)           - 命令行入口
+   • CSVProcessor.cs (86 lines)      - 转换逻辑
+
+✅ PROJECT FILE (1 file)
+   • Token.csproj                    - .NET Framework 4.8 配置
+
+✅ BUILD SCRIPT (1 file)
+   • BUILD_NET48.bat                 - 编译脚本 ⭐
+
+✅ TEST DATA (1 file)
+   • sample_data.csv                 - 5 行测试数据
+
+✅ DOCUMENTATION (2 files)
+   • README_NET48.md                 - 完整说明 ⭐
+   • QUICKSTART_NET48.md             - 快速开始
+
+════════════════════════════════════════════════════════════════
+
+🚀 QUICK START (3 STEPS)
+════════════════════════════════════════════════════════════════
+
+STEP 1: Install .NET Framework 4.8
+  Download: https://dotnet.microsoft.com/download/dotnet-framework/net48
+  
+  Or check if already installed:
+  reg query "HKLM\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full"
+
+STEP 2: Compile
+  cd C:\projects
+  BUILD_NET48.bat
+
+STEP 3: Use
+  bin\Release\Token.exe sample_data.csv
+
+════════════════════════════════════════════════════════════════
+
+💻 USAGE
+════════════════════════════════════════════════════════════════
+
+Basic Syntax:
+  Token.exe <CSV file path>
+
+Examples:
+  Token.exe sample_data.csv
+  Token.exe C:\temp\1.csv
+  Token.exe "C:\Program Files\data.csv"
+  Token.exe          (show help)
+
+════════════════════════════════════════════════════════════════
+
+📊 DATA CONVERSION
+════════════════════════════════════════════════════════════════
+
+INPUT:
+  EMPLOYEE_2,業務部,PRODUCT_2,17.67,8,141.36,2
+
+OUTPUT:
+  EMPLOYEE_2,業務部,PRODUCT_2,17.67,8,141.36,a3f5c9e2-4d7b-11ee-b56f-0242ac110002
+
+✨ Last column replaced with random UUID
+
+════════════════════════════════════════════════════════════════
+
+✨ FEATURES
+════════════════════════════════════════════════════════════════
+
+✅ Command-line tool
+✅ Parameter support
+✅ Random UUID conversion
+✅ Real-time progress
+✅ Error handling
+✅ Chinese support
+✅ File protection
+✅ Auto _UUID suffix
+
+════════════════════════════════════════════════════════════════
+
+📂 PROJECT FILES
+════════════════════════════════════════════════════════════════
+
+C:\projects\
+├── Program.cs                  - Command-line entry
+├── CSVProcessor.cs             - Conversion logic
+├── Token.csproj                - .NET Framework 4.8 config
+├── BUILD_NET48.bat             - Compile script ⭐
+├── sample_data.csv             - Test data
+├── README_NET48.md             - Full documentation ⭐
+└── QUICKSTART_NET48.md         - Quick start
+
+════════════════════════════════════════════════════════════════
+
+🎯 SYSTEM REQUIREMENTS
+════════════════════════════════════════════════════════════════
+
+• Windows 7 SP1 or newer
+• .NET Framework 4.8
+• Visual Studio 2019+ or Build Tools
+
+Download .NET Framework 4.8:
+https://dotnet.microsoft.com/download/dotnet-framework/net48
+
+════════════════════════════════════════════════════════════════
+
+🔨 COMPILATION
+════════════════════════════════════════════════════════════════
+
+After compilation, Token.exe will be at:
+  C:\projects\bin\Release\Token.exe
+
+Compilation Method:
+  BUILD_NET48.bat (automatic, recommended)
+
+Or Manual:
+  msbuild Token.csproj /p:Configuration=Release /p:Platform=AnyCPU
+
+════════════════════════════════════════════════════════════════
+
+📚 DOCUMENTATION
+════════════════════════════════════════════════════════════════
+
+For quick start:       QUICKSTART_NET48.md
+For full details:      README_NET48.md
+
+════════════════════════════════════════════════════════════════
+
+💡 TIPS
+════════════════════════════════════════════════════════════════
+
+• .NET Framework 4.8 is stable and widely supported
+• Works on Windows 7 through Windows 11
+• Compiled exe can run on any machine with .NET 4.8+
+• You can copy Token.exe anywhere
+• Add to System32 for global access
+
+════════════════════════════════════════════════════════════════
+
+🎉 READY TO COMPILE!
+════════════════════════════════════════════════════════════════
+
+Start compilation:
+  cd C:\projects && BUILD_NET48.bat
+
+Then use:
+  bin\Release\Token.exe your_file.csv
+
+That's it! ✨
+
+════════════════════════════════════════════════════════════════
+
+🔗 WHY .NET Framework 4.8?
+════════════════════════════════════════════════════════════════
+
+✅ Most stable version
+✅ Supported on Windows 7+
+✅ Great compatibility
+✅ Pre-installed on many systems
+✅ No runtime distribution needed
+✅ Proven and mature technology
+
+════════════════════════════════════════════════════════════════
+
+Project: Token.exe - CSV UUID Converter (.NET Framework 4.8)
+Version: 1.0
+Type: Command-line tool
+Status: ✅ Ready to compile
+Usage: Token.exe <CSV file path>
+Location: C:\projects\
+
+════════════════════════════════════════════════════════════════

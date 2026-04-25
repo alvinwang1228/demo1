@@ -1,0 +1,6 @@
+C:\Projects\bin\Debug\Token.exe
+C:\Projects\bin\Debug\Token.pdb
+C:\Projects\obj\Debug\Token.csproj.AssemblyReference.cache
+C:\Projects\obj\Debug\Token.csproj.CoreCompileInputs.cache
+C:\Projects\obj\Debug\Token.exe
+C:\Projects\obj\Debug\Token.pdb

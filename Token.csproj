@@ -1,56 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  Token.csproj - MSBuild 專案檔
+  專案名稱  : Token（CSV UUID 轉換器）
+  目標框架  : .NET Framework 4.8
+  輸出類型  : 主控台應用程式（Console EXE）
+  說明      : 讀取 CSV 檔案並將最後一欄替換為隨機 UUID，輸出至新的 *_TOKEN.csv 檔案。
+-->
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <!-- 匯入通用屬性定義（若檔案存在） -->
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   
+  <!-- 全域屬性：適用於所有組態 -->
   <PropertyGroup>
+    <!-- 預設組態為 Debug -->
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <!-- 預設平台為 AnyCPU（不限定 32/64 位元） -->
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <!-- 專案唯一識別碼 -->
     <ProjectGuid>{12345678-1234-1234-1234-123456789012}</ProjectGuid>
+    <!-- 輸出類型：主控台執行檔 -->
     <OutputType>Exe</OutputType>
+    <!-- C# 命名空間根名稱 -->
     <RootNamespace>TokenCSVConverter</RootNamespace>
+    <!-- 輸出組件（EXE）的名稱 -->
     <AssemblyName>Token</AssemblyName>
+    <!-- 目標 .NET Framework 版本 -->
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <!-- PE 檔案對齊大小（位元組） -->
     <FileAlignment>512</FileAlignment>
+    <!-- 自動產生繫結重新導向設定 -->
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFrameworkProfile />
   </PropertyGroup>
 
+  <!-- Debug 組態屬性：啟用偵錯符號、停用最佳化 -->
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
+    <!-- 產生完整的 PDB 偵錯符號檔 -->
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
+    <!-- Debug 組態不最佳化，方便中斷點除錯 -->
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
+    <!-- 定義 DEBUG 與 TRACE 前置處理器符號 -->
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
+    <!-- 警告等級 4：顯示所有警告 -->
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
 
+  <!-- Release 組態屬性：啟用最佳化、僅產生 PDB 索引 -->
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
+    <!-- 僅儲存 PDB 索引，減少輸出大小 -->
     <DebugType>pdbonly</DebugType>
+    <!-- Release 組態啟用編譯器最佳化 -->
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
+    <!-- Release 組態只定義 TRACE，不包含 DEBUG -->
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
 
+  <!-- 參考的 .NET Framework 組件 -->
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xml" />
+    <Reference Include="System" />           <!-- 核心基礎類別 -->
+    <Reference Include="System.Core" />      <!-- LINQ 與延伸方法 -->
+    <Reference Include="System.Xml.Linq" />  <!-- LINQ to XML -->
+    <Reference Include="System.Data.DataSetExtensions" />  <!-- DataSet 延伸 -->
+    <Reference Include="Microsoft.CSharp" /> <!-- 動態型別支援 -->
+    <Reference Include="System.Data" />      <!-- ADO.NET 資料存取 -->
+    <Reference Include="System.Net.Http" />  <!-- HTTP 用戶端 -->
+    <Reference Include="System.Xml" />       <!-- XML 處理 -->
   </ItemGroup>
 
+  <!-- 納入編譯的 C# 原始程式檔 -->
   <ItemGroup>
+    <!-- 程式進入點：解析引數、協調 CSV 處理流程 -->
     <Compile Include="Program.cs" />
+    <!-- CSV 處理邏輯：讀取、轉換、寫入 -->
     <Compile Include="CSVProcessor.cs" />
   </ItemGroup>
 
+  <!-- 匯入 MSBuild C# 建置目標 -->
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
